@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Study Planner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Smart Study Planner</h1>
+            <p class="subtitle">Organize your study schedule and track academic tasks</p>
+        </header>
+        
+        <div class="reminder" id="reminder-section">
+            <h3>📢 Reminders</h3>
+            <p id="reminder-text">No upcoming deadlines.</p>
+        </div>
+        
+        <div class="dashboard">
+            <div class="stats-card">
+                <h2>Study Progress</h2>
+                <div class="stat-item">
+                    <span>Total Tasks:</span>
+                    <span id="total-tasks">0</span>
+                </div>
+                <div class="stat-item">
+                    <span>Completed:</span>
+                    <span id="completed-tasks">0</span>
+                </div>
+                <div class="stat-item">
+                    <span>Pending:</span>
+                    <span id="pending-tasks">0</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" id="progress-bar" style="width: 0%"></div>
+                </div>
+            </div>
+            
+            <div class="stats-card">
+                <h2>Upcoming Deadlines</h2>
+                <div id="upcoming-deadlines">
+                    <p>No upcoming deadlines.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="task-form">
+            <h2>Add New Study Task</h2>
+            <form id="task-form">
+                <div class="form-group">
+                    <label for="task-title">Task Title</label>
+                    <input type="text" id="task-title" placeholder="e.g., Complete Math Assignment" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="task-description">Description</label>
+                    <textarea id="task-description" placeholder="Add details about the task..."></textarea>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <div class="form-group">
+                        <label for="task-deadline">Deadline</label>
+                        <input type="date" id="task-deadline" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="task-priority">Priority</label>
+                        <select id="task-priority">
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Add Task</button>
+            </form>
+        </div>
+        
+        <div class="tabs">
+            <div class="tab active" data-tab="list-view">List View</div>
+            <div class="tab" data-tab="timeline-view">Timeline View</div>
+        </div>
+        
+        <div class="tab-content active" id="list-view">
+            <div class="task-list" id="task-list">
+                <!-- Tasks will be dynamically added here -->
+            </div>
+        </div>
+        
+        <div class="tab-content" id="timeline-view">
+            <div class="timeline" id="timeline">
+                <!-- Timeline items will be dynamically added here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
